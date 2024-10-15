@@ -1,0 +1,65 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Light theme configuration
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    )
+  )
+);
+
+// Dark theme configuration
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$magenta-palette,
+      tertiary: mat.$violet-palette,
+    )
+  )
+);
+
+:root {
+  @include mat.all-component-themes($light-theme);
+
+  // Add backwards compatibility styles for color variants
+  @include mat.color-variants-backwards-compatibility($light-theme);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.vertical-margin-line {
+  border-left: 1px solid #1e1a1d;
+}
+
+.horizontal-margin-line {
+  border-bottom: 1px solid #1e1a1d;
+}
+
+.dark-mode {
+  @include mat.all-component-colors($dark-theme);
+
+  .vertical-margin-line {
+    border-left: 1px solid #fdfbff;
+  }
+
+  .horizontal-margin-line {
+    border-bottom: 1px solid #fdfbff;
+  }
+}
