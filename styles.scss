@@ -173,21 +173,21 @@ body {
 }
 
 .vertical-margin-line {
-  border-left: 1px solid map.get(map.get($_palettes, primary), 95);
+  border-left: 1px solid map-get(map-get($_palettes, primary), 95);
 }
 
 .horizontal-margin-line {
-  border-bottom: 1px solid map.get(map.get($_palettes, primary), 95);
+  border-bottom: 1px solid map-get(map-get($_palettes, primary), 95);
 }
 
 .dark-mode {
   @include mat.all-component-colors($dark-theme);
 
   .vertical-margin-line {
-    border-left: 1px solid map.get(map.get($_palettes, primary), 20);
+    border-left: 1px solid map-get(map-get($_palettes, primary), 20);
   }
 
   .horizontal-margin-line {
-    border-bottom: 1px solid map.get(map.get($_palettes, primary), 20);
+    border-bottom: 1px solid map-get(map-get($_palettes, primary), 20);
   }
 }
