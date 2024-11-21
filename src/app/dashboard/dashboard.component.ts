@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.scss',
+    standalone: true,
     imports: [
         AsyncPipe,
         MatGridListModule,
