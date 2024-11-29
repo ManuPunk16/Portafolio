@@ -1,0 +1,40 @@
+/* Variables para espaciamientos y puntos de quiebre */
+$spacing: 1rem;
+$breakpoint-medium: 1130px;
+$image-hover-scale: 1.1; /* Escalado al pasar el mouse */
+$image-hover-brightness: 1.2; /* Incremento de brillo al pasar el mouse */
+$image-hover-transition: 0.3s ease-in-out; /* Transición suave */
+
+.example-card-footer {
+  padding: 16px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: $spacing; /* Margen externo para el contenedor */
+}
+
+.example-card {
+  flex: 1 1 25%; /* Ocupa el 25% del contenedor por defecto */
+  max-width: 500px;
+  margin: $spacing; /* Margen externo para cada tarjeta */
+
+  @media (max-width: $breakpoint-medium) {
+    flex: 1 1 45%; /* Cambia a ocupar el 45% en pantallas más pequeñas */
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform $image-hover-transition, filter $image-hover-transition;
+
+  &:hover {
+    transform: scale($image-hover-scale); /* Escalado */
+    filter: brightness($image-hover-brightness); /* Incremento de brillo */
+  }
+}

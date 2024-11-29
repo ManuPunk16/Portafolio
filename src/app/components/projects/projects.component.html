@@ -1,1 +1,30 @@
-<p>projects works!</p>
+<section>
+  <div>
+    <h1>Proyectos</h1>
+    <p></p>
+  </div>
+
+  <div class="card-container">
+    <mat-card *ngFor="let card of cards" class="example-card" appearance="outlined">
+      <!-- <mat-card-header>
+        <mat-card-title> {{card.title}} </mat-card-title>
+      </mat-card-header> -->
+
+      <a [routerLink]="[card.route]">
+        <img mat-card-image class="image" [src]="card.image" alt="Photo of a Shiba Inu" >
+      </a>
+
+      <!-- <mat-card-content> {{card.description}} </mat-card-content> -->
+
+      <mat-card-footer class="example-card-footer">
+        <mat-chip-set>
+          <mat-chip> {{card.chips.one}} </mat-chip>
+          <mat-chip> {{card.chips.two}} </mat-chip>
+          <mat-chip> {{card.chips.three}} </mat-chip>
+        </mat-chip-set>
+
+      </mat-card-footer>
+    </mat-card>
+  </div>
+
+</section>
