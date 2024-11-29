@@ -1,0 +1,133 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+  .one {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .two {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .main {
+    text-align: justify;
+    margin: 40px; // Reducido para mejor adaptación
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+
+    // Estilos de tipografía
+    h1 {
+      font-size: 1rem; // Tamaño reducido
+      font-weight: bold;
+    }
+
+    h2,
+    h3 {
+      font-size: 1.5rem; // Tamaño más grande
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1rem; // Igual que h1
+      font-weight: 400;
+    }
+
+    strong {
+      font-weight: 600; // Destacar palabras clave
+    }
+  }
+}
+
+// Media queries para pantallas pequeñas
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr; // Cambiar a una columna
+    grid-template-rows: 1;
+
+    .one,
+    .two {
+      grid-column: 1; // Asegurar que ocupen toda la fila
+    }
+
+    .main {
+      margin: 20px; // Reducir márgenes para pantallas pequeñas
+
+      h1 {
+        font-size: 0.9rem; // Ajustar tamaños proporcionalmente
+      }
+
+      h2,
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Media queries para pantallas de 1000px
+@media (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 1fr; // Cambiar a una columna para pantallas más pequeñas
+    grid-template-rows: 1;
+
+    .one {
+      grid-column: 1;
+      grid-row: 1; // Asegurar que `.one` esté arriba
+    }
+
+    .two {
+      grid-column: 1;
+      grid-row: 2; // Asegurar que `.two` esté debajo de `.one`
+    }
+
+    .main {
+      margin: 20px; // Reducir márgenes para pantallas más pequeñas
+
+      h1 {
+        font-size: 0.9rem; // Ajustar tamaños proporcionalmente
+      }
+
+      h2,
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Media queries para pantallas grandes
+@media (min-width: 1200px) {
+  .wrapper {
+    gap: 20px; // Más espacio entre columnas
+
+    .main {
+      margin: 60px;
+
+      h1 {
+        font-size: 1.2rem; // Incrementar tamaños
+      }
+
+      h2,
+      h3 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

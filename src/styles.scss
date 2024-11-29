@@ -2,6 +2,14 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
+:root{
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
 // Note: Color palettes are generated from primary: #00A813, secondary: #3CB7EA, tertiary: #00DCBC, neutral: #8B8B8B
 $_palettes: (
   primary: (
@@ -166,28 +174,66 @@ $dark-theme: mat.define-theme((
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .vertical-margin-line {
-  border-left: 1px solid map.get(map.get($_palettes, primary), 95);
+  padding: 25px;
+  // border-left: 1px solid map.get(map.get($_palettes, primary), 95);
+  background-color: map.get(map.get($_palettes, primary), 95);
 }
 
 .horizontal-margin-line {
-  border-bottom: 1px solid map.get(map.get($_palettes, primary), 95);
+  // border-bottom: 1px solid map.get(map.get($_palettes, primary), 95);
+  background-color: map.get(map.get($_palettes, primary), 95) !important;
+}
+
+.mat-drawer-inner-container {
+  background-color: map.get(map.get($_palettes, primary), 95) !important;
+}
+
+a.link {
+  text-decoration: none;
+}
+
+a.link:link, a:visited {
+  color: rgb(0, 0, 0);
+}
+
+a.link:hover {
+  color: rgb(125, 218, 255);
 }
 
 .dark-mode {
   @include mat.all-component-colors($dark-theme);
 
   .vertical-margin-line {
-    border-left: 1px solid map.get(map.get($_palettes, primary), 20);
+    // border-left: 1px solid map.get(map.get($_palettes, primary), 20);
+    background-color: map.get(map.get($_palettes, tertiary), 10);
+  }
+
+  a.link {
+    text-decoration: none;
+  }
+
+  a.link:link, a:visited {
+    color: rgb(250, 250, 250);
+  }
+
+  a.link:hover {
+    color: rgb(125, 218, 255);
   }
 
   .horizontal-margin-line {
-    border-bottom: 1px solid map.get(map.get($_palettes, primary), 20);
+    // border-bottom: 1px solid map.get(map.get($_palettes, primary), 20);
+    background-color: map.get(map.get($_palettes, tertiary), 10) !important;
+  }
+
+  .mat-drawer-inner-container {
+    background-color: map.get(map.get($_palettes, tertiary), 10) !important;
+  }
+
+  .icon-brightness{
+    color: rgb(250, 250, 250);
   }
 }

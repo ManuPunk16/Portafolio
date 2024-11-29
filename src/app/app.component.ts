@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { RouterModule } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { FooterComponent } from './components/footer/footer.component';
+// import { FooterComponent } from './components/footer/footer.component';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -17,14 +17,15 @@ import { ThemeService } from './services/theme.service';
     standalone: true,
     imports: [
         RouterOutlet,
-        FooterComponent,
+        // FooterComponent,
         MatToolbarModule,
         MatButtonModule,
         MatIconModule,
         MatSidenavModule,
         MatListModule,
         RouterModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        NgIf
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'

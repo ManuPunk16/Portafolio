@@ -1,10 +1,15 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar class="example-toolbar horizontal-margin-line">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Responsive App</h1>
+    <button mat-icon-button (click)="snav.toggle()" [hidden]="!mobileQuery.matches"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Portafolio Web</h1>
     <span class="spacer"></span>
+    <a mat-button [hidden]="mobileQuery.matches" [routerLink]="['']">Inicio</a>
+    <a mat-button [hidden]="mobileQuery.matches" [routerLink]="['projects']">Proyectos</a>
+    <a mat-button [hidden]="mobileQuery.matches" [routerLink]="['about']">Sobre mi</a>
+    <a mat-button [hidden]="mobileQuery.matches" [routerLink]="['contact']">Contacto</a>
     <mat-slide-toggle aria-label="Brightness switch" (change)="toggleTheme()">
-      <mat-icon>brightness_2</mat-icon>
+      <mat-icon *ngIf="!isDarkTheme">brightness_2</mat-icon>
+      <mat-icon *ngIf="isDarkTheme" class="icon-brightness">wb_sunny</mat-icon>
     </mat-slide-toggle>
   </mat-toolbar>
 
@@ -26,9 +31,9 @@
       <div class="vertical-margin-line">
         <router-outlet></router-outlet>
       </div>
-      <div class="footer vertical-margin-line">
+      <!-- <div class="footer vertical-margin-line">
         <app-footer></app-footer>
-      </div>
+      </div> -->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
