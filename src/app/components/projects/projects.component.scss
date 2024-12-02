@@ -4,6 +4,7 @@ $breakpoint-medium: 1130px;
 $image-hover-scale: 1.1; /* Escalado al pasar el mouse */
 $image-hover-brightness: 1.2; /* Incremento de brillo al pasar el mouse */
 $image-hover-transition: 0.3s ease-in-out; /* Transición suave */
+$image-border-radius: 12px; /* Radio para las esquinas redondeadas */
 
 .example-card-footer {
   padding: 16px;
@@ -31,6 +32,8 @@ $image-hover-transition: 0.3s ease-in-out; /* Transición suave */
   height: auto;
   object-fit: cover;
   display: block;
+  border-top-left-radius: $image-border-radius; /* Esquina superior izquierda */
+  border-top-right-radius: $image-border-radius; /* Esquina superior derecha */
   transition: transform $image-hover-transition, filter $image-hover-transition;
 
   &:hover {
