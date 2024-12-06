@@ -1,1 +1,29 @@
-<p>about works!</p>
+<div>
+  <div>
+    <h1>Sobre mi</h1>
+
+    Hola, parrafo del sobre mi ............
+  </div>
+
+  <div>
+    <h2>habilidades y herramientas</h2>
+    <main class="svg-container">
+      <div *ngFor="let svg of svgs" [ngClass]="['svg', svg.color]">
+        <svg
+          [attr.aria-labelledby]="svg.icon"
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path [attr.d]="svg.path"></path>
+        </svg>
+        <p [id]="svg.icon">{{ svg.icon.replace('simpleicons-', '').replace('-icon', '').toUpperCase() }}</p>
+      </div>
+    </main>
+  </div>
+
+  <div>
+    <h3></h3>
+    Cursos y aprendizaje que me gustaria
+  </div>
+</div>

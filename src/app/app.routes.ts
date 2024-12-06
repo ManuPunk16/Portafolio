@@ -11,14 +11,6 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'projects', component: ProjectsComponent },
-  {
-    path: 'projects/pokedex',
-    loadComponent: () =>
-      import('./components/projects/pokedex/pokedex.component').then(
-        (m) => m.PokedexComponent
-      ),
-    data: { preload: true },
-  },
   { path: '**', component: ErrorComponent }
 ];
 
