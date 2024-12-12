@@ -19,7 +19,68 @@
 .color-firebase { background-color: #DD2C00; }
 .color-c { background-color: #00599C; }
 
-// Tus estilos existentes para colores
+.container-text {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+
+    &:last-of-type {
+      font-style: italic;
+      color: #7f8c8d;
+      border-left: 3px solid #3498db;
+      padding-left: 10px;
+    }
+  }
+
+  q {
+    font-style: italic;
+    color: #41678d;
+  }
+}
+
+.container-text2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+
+  q {
+    font-style: italic;
+    color: #41678d;
+  }
+}
+
+.container-works {
+  max-width: 1600px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
 
 .svg-container {
   padding-top: 20px;
@@ -84,5 +145,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.container-more {
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+
+  h3 {
+    font-size: 2rem;
+    text-align: center;
   }
 }

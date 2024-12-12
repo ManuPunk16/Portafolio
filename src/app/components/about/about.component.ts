@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { NgClass } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
     selector: 'app-about',
     standalone: true,
     imports: [
       NgFor,
-      NgClass
+      NgClass,
+      MatCardModule
     ],
     templateUrl: './about.component.html',
     styleUrl: './about.component.scss'
